@@ -4,7 +4,7 @@ import ToDoList from './ToDoList'
 import { RiCloseCircleLine } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
 
-function ToDo({ todo, completeTodo }) {
+function ToDo({ todo, completeTodo, removeTodo }) {
     const [edit, setEdit] = useState({
         id: null,
         value: ''
