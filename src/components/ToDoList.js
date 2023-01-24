@@ -12,7 +12,6 @@ function ToDoList() {
         const newTodos = [todo, ...todos]
 
         setTodos(newTodos);
-        console.log(...todos);
     }
 
     return (
