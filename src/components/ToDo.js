@@ -4,14 +4,14 @@ import ToDoList from './ToDoList'
 import { RiCloseCircleLine } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
 
-function ToDo() {
+function ToDo({ todo, completeTodo }) {
     const [edit, setEdit] = useState({
         id: null,
         value: ''
     })
 
 
-  return todos.map((todo, index) => (
+  return todo.map((todo, index) => (
       <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}>
 
@@ -19,8 +19,14 @@ function ToDo() {
              {todo.text} 
           </div>
           <div className='icons'>
-              <RiCloseCircleLine />
-              <TiEdit />
+              <RiCloseCircleLine 
+              onClick={() => removeTodo(todo.id)}
+              className='delete-icon' 
+              />
+              <TiEdit 
+              onClick={() => setEdit({id: todo.id, value: todo.text})}
+              className='edit-icon'  
+              />
           </div>
 
       </div>
